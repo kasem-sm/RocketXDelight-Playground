@@ -1,5 +1,11 @@
 # Delight-Playground
 🎉 Native android app made with Kotlin &amp; Jetpack Compose with example usage of Ktor, SqlDelight, Hilt.
+---
+[![GitHub license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Delight-Playground](https://img.shields.io/badge/APK-Delight--Playground-green)](https://github.com/kasem-sm/SpaceXDelight-Playground/app/release/app-release.apk)
+
+![](art/1.jpg)
+![](art/2.jpg)
 
 ###   ***Why SqlDelight and Ktor?***
 - Unlike Room Database which is only specific to Android, SqlDelight can be used for various platforms such as Android, iOS, web etc, the initial setup of SqlDelight is not as easy as Room but also not hard!
@@ -21,7 +27,7 @@
 ### 🧾 **Medium artcile**
 - [I'll create & publish soon](https://medium.com/@kasem.)
 
-### TODO's
+### TODO
 - Implement RocketDetailScreen & DetailScreenUseCase (simply request cache to get data from the rocketID passed by navArgs
 - Add compose-navigation-animation when a user clicks 'RocketDetailScreen'
 - Add dark mode toggle
