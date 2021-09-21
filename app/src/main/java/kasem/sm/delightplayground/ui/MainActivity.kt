@@ -1,5 +1,7 @@
 package kasem.sm.delightplayground.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -48,6 +50,9 @@ class MainActivity : ComponentActivity() {
                                 navController.navigate(
                                     route = "${Screen.DetailScreen.route}/$rocketId",
                                 )
+                            },
+                            openDelightRepo = {
+                                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(GITHUB_REPO)))
                             }
                         )
                     }
@@ -62,5 +67,9 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    companion object {
+        private const val GITHUB_REPO = "https://github.com/kasem-sm/SpaceXDelight-Playground"
     }
 }

@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -29,6 +30,7 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import kasem.sm.delightplayground.datasource.Rocket
 import kasem.sm.delightplayground.ui.theme.CardColorDark
+import kasem.sm.delightplayground.ui.theme.CardColorLight
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
@@ -59,7 +61,7 @@ fun RocketListItem(
             )
         ),
         shape = RoundedCornerShape(12.dp),
-        backgroundColor = CardColorDark
+        backgroundColor = if (isSystemInDarkTheme()) CardColorDark else CardColorLight
     ) {
         val painter = rememberImagePainter(
             data = rocket.image,
