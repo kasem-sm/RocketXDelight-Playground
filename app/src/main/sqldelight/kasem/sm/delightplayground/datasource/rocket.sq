@@ -1,0 +1,50 @@
+CREATE TABLE rocket (
+	id INTEGER NOT NULL PRIMARY KEY,
+	active INTEGER DEFAULT 0 NOT NULL,
+	company TEXT NOT NULL,
+	costPerLaunch INTEGER NOT NULL,
+	country TEXT NOT NULL,
+	description TEXT NOT NULL,
+	diameterFeet TEXT NOT NULL,
+	diamaterMeters TEXT NOT NULL,
+	firstFlight TEXT NOT NULL,
+	image TEXT NOT NULL,
+	heightFeet TEXT NOT NULL,
+	meters TEXT NOT NULL,
+	massKg INTEGER NOT NULL,
+	massLb INTEGER NOT NULL,
+	rocketId TEXT NOT NULL,
+	rocketType TEXT NOT NULL,
+	stages INTEGER NOT NULL,
+	wikipedia TEXT NOT NULL
+);
+
+selectAllRockets:
+SELECT * FROM rocket;
+
+insertRocket:
+INSERT OR REPLACE
+INTO rocket(
+id,
+active,
+company,
+costPerLaunch,
+country,
+description,
+diameterFeet,
+diamaterMeters,
+firstFlight,
+image,
+heightFeet,
+meters,
+massKg,
+massLb,
+rocketId,
+rocketType,
+stages,
+wikipedia
+) VALUES (?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectRocketById:
+SELECT * FROM rocket
+WHERE id = :id;
