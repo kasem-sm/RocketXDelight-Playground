@@ -7,12 +7,14 @@ usage of advance libraries such as Ktor, SqlDelight, Hilt etc.
 [![Delight-Playground](https://img.shields.io/badge/APK-Delight--Playground-green)](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/release/app-release.apk)
 
 <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/2.jpg" width="25%">
+<img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/3.jpg" width="25%">
 
 ### **SqlDelight**
 
 - SqlDelight can be used for various platforms such as Android, iOS, web etc. The initial setup of
   SqlDelight is not as easy as Room but also not difficult.
-- If you need to know more about SqlDelight, please read the documentation or [my article](https://github.com/kasem-sm/RocketXDelight-Playground#-medium-artcile).
+- If you need to know more about SqlDelight, please read the documentation
+  or [my article](https://github.com/kasem-sm/RocketXDelight-Playground#-medium-artcile).
 
 ### **Content of the app**
 
@@ -30,9 +32,12 @@ usage of advance libraries such as Ktor, SqlDelight, Hilt etc.
 - [Coil](https://coil-kt.github.io/coil/compose/)
 - [Swipe Refresh from Accompanist](https://google.github.io/accompanist/swiperefresh/)
 
-### 🧾 **Medium article**
+### 🧾 **More Information**
 
-- [Link will be updated soon](https://medium.com/@kasem.)
+- The app also includes example usage of Scaffold API, handling backPress, theming, best practices
+  of Jetpack Compose.
+
+- [Medium Article - Link will be updated soon](https://medium.com/@kasem.)
 
 ### ***TODO***
 
