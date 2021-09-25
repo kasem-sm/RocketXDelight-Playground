@@ -7,6 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 import kasem.sm.delightplayground.datasource.cache.RocketCache
 import kasem.sm.delightplayground.datasource.network.RocketService
+import kasem.sm.delightplayground.interactors.GetRocketByIdUseCase
 import kasem.sm.delightplayground.interactors.GetRocketsUseCase
 
 @Module
@@ -21,6 +22,16 @@ object RocketsInteractorsModule {
     ): GetRocketsUseCase {
         return GetRocketsUseCase(
             service = service,
+            cache = cache
+        )
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetRocketByIdUseCase(
+        cache: RocketCache
+    ): GetRocketByIdUseCase {
+        return GetRocketByIdUseCase(
             cache = cache
         )
     }

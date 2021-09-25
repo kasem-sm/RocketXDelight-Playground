@@ -1,40 +1,51 @@
 # Delight-Playground
-🎉 Native android app made with Kotlin &amp; Jetpack Compose with example usage of Ktor, SqlDelight, Hilt.
+
+🎉 Native Android application built with Kotlin and Jetpack Compose. This app also illustrates the
+usage of advance libraries such as Ktor, SqlDelight, Hilt etc.
+
 ---
 [![Delight-Playground](https://img.shields.io/badge/APK-Delight--Playground-green)](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/release/app-release.apk)
 
 <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/2.jpg" width="25%">
+<img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/3.jpg" width="25%">
 
+### **SqlDelight**
 
-###   ***Why SqlDelight and Ktor?***
-- Unlike Room Database which is only specific to Android, SqlDelight can be used for various platforms such as Android, iOS, web etc, the initial setup of SqlDelight is not as easy as Room but also not hard!
-- Ktor? Yah, Retrofit is also cool but let's explore as Ktor is also not specific to Android.
+- SqlDelight can be used for various platforms such as Android, iOS, web etc. The initial setup of
+  SqlDelight is not as easy as Room but also not difficult.
+- If you need to know more about SqlDelight, please read the documentation
+  or [my article](https://github.com/kasem-sm/RocketXDelight-Playground#-medium-artcile).
 
-###   **What's the app about?**
-- Well nothing fancy, we will initially fetch a list of rockets from [_*SpaceX Api*_](https://api.spacexdata.com/v3/rockets) using Ktor.
-- We will then [cache the data](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/src/main/java/kasem/sm/delightplayground/interactors/GetRocketsUseCase.kt) using SqlDelight and display it.
+### **Content of the app**
+
+- We will initially fetch a list of rockets from [_*SpaceX
+  Api*_](https://api.spacexdata.com/v3/rockets) using Ktor.
+- We will
+  then [cache the data](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/src/main/java/kasem/sm/delightplayground/interactors/GetRocketsUseCase.kt)
+  using SqlDelight and display it.
 
 ### Libraries used and it's source
+
 - [SqlDelight](https://github.com/cashapp/sqldelight)
 - [Ktor](https://github.com/ktorio/ktor)
 - [Dagger-Hilt](https://github.com/google/dagger)
 - [Coil](https://coil-kt.github.io/coil/compose/)
 - [Swipe Refresh from Accompanist](https://google.github.io/accompanist/swiperefresh/)
-- and maybe more?!
 
+### 🧾 **More Information**
 
-### 🧾 **Medium artcile**
-- [I'll create & publish soon](https://medium.com/@kasem.)
+- The app also includes example usage of Scaffold API, handling backPress, theming, best practices
+  of Jetpack Compose.
 
-### TODO
-- Implement RocketDetailScreen & DetailScreenUseCase (simply request cache to get data from the rocketID passed by navArgs
-- Add compose-navigation-animation when a user clicks 'RocketDetailScreen'
-- Add dark mode toggle
-- Implement BottomNavigation with Compose
-- Implement [ISRO's Launcher API](https://isro.vercel.app/api/launchers) + SqlDelight caching
+- [Medium Article - Link will be updated soon](https://medium.com/@kasem.)
 
-### Can I Contribute?
-- You are always welcome to do so, You can start a discussion and then open a PR.
+### ***TODO***
+
+- Implement dark mode toggle using Jetpack Datastore.
+
+### ***How to contribute?***
+
+- You can start a discussion and then open a PR, Let's learn together!
 
 ## License
 

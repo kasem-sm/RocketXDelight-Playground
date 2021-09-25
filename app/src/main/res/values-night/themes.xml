@@ -11,7 +11,9 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:statusBarColor" tools:targetApi="l">@color/status_bar_color</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <item name="android:navigationBarColor">@color/navigation_bar</item>
+        <item name="android:windowBackground">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

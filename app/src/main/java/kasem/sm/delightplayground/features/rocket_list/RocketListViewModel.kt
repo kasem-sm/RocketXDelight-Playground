@@ -1,42 +1,29 @@
 package kasem.sm.delightplayground.features.rocket_list
 
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kasem.sm.delightplayground.core.ProgressState
-import kasem.sm.delightplayground.core.Resource
+import kasem.sm.delightplayground.core.state.ProgressState
+import kasem.sm.delightplayground.core.state.Resource
 import kasem.sm.delightplayground.interactors.GetRocketsUseCase
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 
 @HiltViewModel
 class RocketListViewModel @Inject constructor(
     private val getRocketsUseCase: GetRocketsUseCase
 ) : ViewModel() {
 
-    val state = mutableStateOf(RocketState())
+    val state: MutableState<RocketState> = mutableStateOf(RocketState())
 
     init {
-        provoke(RocketListEvent.GetRockets)
+        getRockets()
     }
 
-    fun provoke(event: RocketListEvent) {
-        viewModelScope.launch {
-            try {
-                when (event) {
-                    is RocketListEvent.GetRockets -> {
-                        getRockets()
-                    }
-                }
-            } catch (e: Exception) {
-            }
-        }
-    }
-
-    private fun getRockets() {
+    fun getRockets() {
         getRocketsUseCase().onEach { resource ->
             when (resource) {
                 is Resource.Loading -> {

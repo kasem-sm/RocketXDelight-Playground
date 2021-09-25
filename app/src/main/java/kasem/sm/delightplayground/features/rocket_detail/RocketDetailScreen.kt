@@ -1,32 +1,71 @@
 package kasem.sm.delightplayground.features.rocket_detail
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Box
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.BottomSheetScaffold
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import kasem.sm.delightplayground.ui.theme.CardColorDark
-import kasem.sm.delightplayground.ui.theme.CardColorLight
+import androidx.compose.ui.unit.dp
+import coil.ImageLoader
+import kasem.sm.delightplayground.features.rocket_detail.components.RocketDescription
+import kasem.sm.delightplayground.features.rocket_detail.components.RocketDetail
+import kasem.sm.delightplayground.ui.theme.delightBottomSheetColor
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RocketDetailScreen(
-    rocketId: Int?
+    state: RocketDetailState,
+    imageLoader: ImageLoader,
+    onMenuItemClicked: () -> Unit
 ) {
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(if (isSystemInDarkTheme()) CardColorDark else CardColorLight)
+    val bottomSheetScaffoldState = rememberBottomSheetScaffoldState()
+    val scope = rememberCoroutineScope()
+
+    BackHandler(
+        enabled = bottomSheetScaffoldState.bottomSheetState.isExpanded ||
+            bottomSheetScaffoldState.bottomSheetState.isAnimationRunning
     ) {
-        Text(
-            text = "Rocket ID $rocketId",
-            color = MaterialTheme.colors.onBackground,
+        scope.launch {
+            bottomSheetScaffoldState.bottomSheetState.collapse()
+        }
+    }
+
+    state.rocket?.let { rocket ->
+        BottomSheetScaffold(
             modifier = Modifier
-                .align(Alignment.Center)
-        )
+                .fillMaxSize(),
+            scaffoldState = bottomSheetScaffoldState,
+            sheetShape = RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp),
+            sheetBackgroundColor = delightBottomSheetColor(),
+            sheetContent = {
+                RocketDescription(rocket = rocket)
+            }
+        ) {
+            /**
+             * Default bottom sheet peek height is 56.dp
+             * so the content should have a padding of the same or more from bottom
+             */
+            LazyColumn(
+                modifier = Modifier
+                    .padding(bottom = 56.dp)
+            ) {
+                item {
+                    RocketDetail(
+                        isLoading = state.isLoading,
+                        rocket = rocket,
+                        imageLoader = imageLoader,
+                        onMenuItemClicked = onMenuItemClicked
+                    )
+                }
+            }
+        }
     }
 }
