@@ -35,6 +35,7 @@ class RocketCacheImpl(
             massKg = rocket.massKg,
             massLb = rocket.massLb,
             rocketId = rocket.rocketId,
+            rocketTitle = rocket.rocketTitle,
             rocketType = rocket.rocketType,
             stages = rocket.stages,
             wikipedia = rocket.wikipedia

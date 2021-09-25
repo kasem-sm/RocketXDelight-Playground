@@ -5,5 +5,5 @@ import kasem.sm.delightplayground.datasource.Rocket
 data class RocketState(
     val isLoading: Boolean = false,
     val rockets: List<Rocket> = listOf(),
-    val errorMessage: String = "Error Message"
+    val errorMessage: String? = null
 )

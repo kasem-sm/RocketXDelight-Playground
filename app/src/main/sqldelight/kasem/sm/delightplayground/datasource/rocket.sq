@@ -1,3 +1,5 @@
+import kotlin.collections.List;
+
 CREATE TABLE rocket (
 	id INTEGER NOT NULL PRIMARY KEY,
 	active INTEGER DEFAULT 0 NOT NULL,
@@ -8,12 +10,13 @@ CREATE TABLE rocket (
 	diameterFeet TEXT NOT NULL,
 	diamaterMeters TEXT NOT NULL,
 	firstFlight TEXT NOT NULL,
-	image TEXT NOT NULL,
+	image TEXT AS List<String> NOT NULL,
 	heightFeet TEXT NOT NULL,
 	meters TEXT NOT NULL,
 	massKg INTEGER NOT NULL,
 	massLb INTEGER NOT NULL,
 	rocketId TEXT NOT NULL,
+	rocketTitle TEXT NOT NULL,
 	rocketType TEXT NOT NULL,
 	stages INTEGER NOT NULL,
 	wikipedia TEXT NOT NULL
@@ -40,10 +43,11 @@ meters,
 massKg,
 massLb,
 rocketId,
+rocketTitle,
 rocketType,
 stages,
 wikipedia
-) VALUES (?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+) VALUES (?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 selectRocketById:
 SELECT * FROM rocket
