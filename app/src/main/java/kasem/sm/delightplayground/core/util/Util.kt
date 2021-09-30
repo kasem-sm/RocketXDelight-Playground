@@ -14,24 +14,22 @@
  limitations under the License.
  */
 
-package kasem.sm.delightplayground.datasource.network
+package kasem.sm.delightplayground.core.util
 
-import io.ktor.client.HttpClient
-import io.ktor.client.request.get
-import io.ktor.client.request.url
+import kasem.sm.delightplayground.datasource.Rocket
+import kasem.sm.delightplayground.datasource.cache.util.toDbRocket
 import kasem.sm.delightplayground.datasource.network.model.RocketDtoItem
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 
-class RocketServiceImpl(
-    private val httpClient: HttpClient
-) : RocketService {
-    override suspend fun getRockets(): List<RocketDtoItem> {
-        return httpClient.get {
-            url(END_POINT_ROCKETS)
-        }
-    }
+private val json = Json {
+    ignoreUnknownKeys = true
+}
 
-    companion object {
-        private const val BASE_URL = "https://api.spacexdata.com/"
-        const val END_POINT_ROCKETS = "${BASE_URL}v3/rockets"
+@OptIn(ExperimentalSerializationApi::class)
+fun String.serializeData(): List<Rocket> {
+    return json.decodeFromString<List<RocketDtoItem>>(this).map {
+        it.toDbRocket()
     }
 }

@@ -14,12 +14,8 @@
  limitations under the License.
  */
 
-package kasem.sm.delightplayground.datasource.network.model
+package kasem.sm.delightplayground.datasource.network.response
 
-import kotlinx.serialization.Serializable
-
-@Serializable
-data class Diameter(
-    val feet: Double,
-    val meters: Double
-)
+enum class RocketResponseType {
+    EMPTY_DATA, INVALID_DATA, VALID_DATA
+}

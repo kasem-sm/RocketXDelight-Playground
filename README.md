@@ -6,8 +6,7 @@ usage of advance libraries such as Ktor, SqlDelight, Hilt etc.
 ---
 [![Delight-Playground](https://img.shields.io/badge/APK-Delight--Playground-green)](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/release/app-release.apk)
 
-<img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/2.jpg" width="25%">
-<img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/3.jpg" width="25%">
+<img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/2.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/3.jpg" width="25%">
 
 ### **SqlDelight**
 

@@ -1,17 +1,24 @@
 name: Delight Build
 
-on:
-  pull_request:
-    paths:
-      - "**/*.kt"
-      - ".github/workflows/action.yml"
+on: push
+
 jobs:
-  ktlint:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: "checkout"
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v1
 
-      - name: "ktlint"
-        uses: "vroy/gha-kotlin-linter@v1"
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+      - name: Delight Build
+        run: ./gradlew assemble
+
+      - name: Delight Unit Tests
+        run: ./gradlew test
+
+      - name: Delight Code Review
+        run: ./gradlew ktlintCheck
