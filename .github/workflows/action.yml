@@ -8,6 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+        
+      - name: Executable Perms
+        run: chmod +x ./gradlew
 
       - name: Delight Unit Tests
         run: ./gradlew test
