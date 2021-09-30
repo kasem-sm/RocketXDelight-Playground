@@ -9,17 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Set Up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.11
-
-      - name: Delight Build
-        run: ./gradlew assemble
-
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
       - name: Delight Unit Tests
         run: ./gradlew test
 
