@@ -1,50 +1,57 @@
 # Delight-Playground
 
-🎉 Native Android application built with Kotlin and Jetpack Compose. This app also illustrates the
-usage of advance libraries such as Ktor, SqlDelight, Hilt etc.
+🎉 Native Android application built with Kotlin and Jetpack Compose. This project also illustrates the
+usage of advance libraries such as Ktor, SqlDelight, Hilt etc with the recommended practices.
 
----
 [![Delight-Playground](https://img.shields.io/badge/APK-Delight--Playground-green)](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/release/app-release.apk)
 
-<img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/2.jpg" width="25%"> -*- <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/3.jpg" width="25%">
+<table>
+  <tr>
+    <th> <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="70%"> 
+    <th> <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/2.jpg" width="70%">
+    <th> <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/3.jpg" width="70%">
+ </th>
+</table>
 
-### **SqlDelight**
-
-- SqlDelight can be used for various platforms such as Android, iOS, web etc. The initial setup of
-  SqlDelight is not as easy as Room but also not difficult.
-- If you need to know more about SqlDelight, please read the documentation
-  or [my article](https://github.com/kasem-sm/RocketXDelight-Playground#-medium-artcile).
-
-### **Content of the app**
-
-- We will initially fetch a list of rockets from [_*SpaceX
-  Api*_](https://api.spacexdata.com/v3/rockets) using Ktor.
-- We will
-  then [cache the data](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/src/main/java/kasem/sm/delightplayground/interactors/GetRocketsUseCase.kt)
-  using SqlDelight and display it.
-
-### Libraries used and it's source
-
-- [SqlDelight](https://github.com/cashapp/sqldelight)
-- [Ktor](https://github.com/ktorio/ktor)
-- [Dagger-Hilt](https://github.com/google/dagger)
-- [Coil](https://coil-kt.github.io/coil/compose/)
-- [Swipe Refresh from Accompanist](https://google.github.io/accompanist/swiperefresh/)
+<table>
+<tbody>
+<tr style="height: 23px;">
+<td style="height: 23px;">Libraries Used</td>
+<td style="height: 23px;">For</td>
+<td style="height: 23px;">Source/Documentation</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;">SqlDelight</td>
+<td style="height: 23px;">Caching</td>
+<td style="height: 23px;">https://github.com/cashapp/sqldelight</td>
+</tr>
+<tr style="height: 23.5px;">
+<td style="height: 23.5px;">Ktor</td>
+<td style="height: 23.5px;">Fetching</td>
+<td style="height: 23.5px;">https://github.com/ktorio/ktor</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;">Dagger-Hilt</td>
+<td style="height: 23px;">Dependency Injection</td>
+<td style="height: 23px;">https://github.com/google/dagger</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px;">Coil</td>
+<td style="height: 23px;">Image Loading</td>
+<td style="height: 23px;">https://coil-kt.github.io/coil/compose/</td>
+</tr>
+</tbody>
+</table>
 
 ### 🧾 **More Information**
 
 - The app also includes example usage of Scaffold API, handling backPress, theming, best practices
   of Jetpack Compose.
 
-- [Medium Article - Link will be updated soon](https://medium.com/@kasem.)
-
 ### ***TODO***
 
 - Implement dark mode toggle using Jetpack Datastore.
-
-### ***How to contribute?***
-
-- You can start a discussion and then open a PR, Let's learn together!
+- Add Unit tests 
 
 ## License
 
