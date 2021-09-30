@@ -17,6 +17,9 @@ jobs:
       - name: Delight Build
         run: ./gradlew assemble
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Delight Unit Tests
         run: ./gradlew test
 
