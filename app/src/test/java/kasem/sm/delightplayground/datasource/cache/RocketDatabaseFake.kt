@@ -14,12 +14,16 @@
  limitations under the License.
  */
 
-package kasem.sm.delightplayground.datasource.network.model
+package kasem.sm.delightplayground.datasource.cache
 
-import kotlinx.serialization.Serializable
+import kasem.sm.delightplayground.datasource.Rocket
 
-@Serializable
-data class Diameter(
-    val feet: Double,
-    val meters: Double
-)
+class RocketDatabaseFake {
+
+    /**
+     * We would use a mutable list as our fake Database because
+     * we need to mock our Database and list would be a good replacement for it.
+     */
+
+    val rocket: MutableList<Rocket> = mutableListOf()
+}

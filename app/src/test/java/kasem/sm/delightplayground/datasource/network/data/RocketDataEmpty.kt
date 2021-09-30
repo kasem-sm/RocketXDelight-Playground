@@ -14,12 +14,15 @@
  limitations under the License.
  */
 
-package kasem.sm.delightplayground.datasource.network.model
+package kasem.sm.delightplayground.datasource.network.data
 
-import kotlinx.serialization.Serializable
+/**
+ * This class is used to Mock our API response.
+ * As the class name suggests, this data would be Empty but still Valid
+ * */
 
-@Serializable
-data class Diameter(
-    val feet: Double,
-    val meters: Double
-)
+object RocketDataEmpty {
+
+    // Valid but Empty Json data
+    val data = "[]"
+}

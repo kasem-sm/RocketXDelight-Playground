@@ -14,12 +14,26 @@
  limitations under the License.
  */
 
-package kasem.sm.delightplayground.datasource.network.model
+package kasem.sm.delightplayground.core.domain
 
-import kotlinx.serialization.Serializable
+sealed class Resource<T> {
 
-@Serializable
-data class Diameter(
-    val feet: Double,
-    val meters: Double
-)
+    data class Error<T>(
+        val errorMessage: String?
+    ) : Resource<T>()
+
+    data class Success<T>(
+        val data: T? = null
+    ) : Resource<T>()
+
+    data class Loading<T>(
+        val progressState: ProgressState = ProgressState.Idle
+    ) : Resource<T>()
+}
+
+sealed class ProgressState {
+
+    object Progress : ProgressState()
+
+    object Idle : ProgressState()
+}

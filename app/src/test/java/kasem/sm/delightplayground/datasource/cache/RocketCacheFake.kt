@@ -14,24 +14,28 @@
  limitations under the License.
  */
 
-package kasem.sm.delightplayground.datasource.network
+package kasem.sm.delightplayground.datasource.cache
 
-import io.ktor.client.HttpClient
-import io.ktor.client.request.get
-import io.ktor.client.request.url
-import kasem.sm.delightplayground.datasource.network.model.RocketDtoItem
+import kasem.sm.delightplayground.datasource.Rocket
 
-class RocketServiceImpl(
-    private val httpClient: HttpClient
-) : RocketService {
-    override suspend fun getRockets(): List<RocketDtoItem> {
-        return httpClient.get {
-            url(END_POINT_ROCKETS)
+class RocketCacheFake(
+    private val db: RocketDatabaseFake
+) : RocketCache {
+    override suspend fun selectAll(): List<Rocket> {
+        return db.rocket
+    }
+
+    override suspend fun selectRocketById(id: Int): Rocket? {
+        return db.rocket.find {
+            it.id.toInt() == id
         }
     }
 
-    companion object {
-        private const val BASE_URL = "https://api.spacexdata.com/"
-        const val END_POINT_ROCKETS = "${BASE_URL}v3/rockets"
+    override suspend fun insertRocket(rocket: Rocket) {
+        db.rocket.add(rocket)
+    }
+
+    override suspend fun insertRockets(rocket: List<Rocket>) {
+        db.rocket.addAll(rocket)
     }
 }
