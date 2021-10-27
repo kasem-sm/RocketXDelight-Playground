@@ -22,13 +22,13 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kasem.sm.delightplayground.ui.theme.delightSubHeadingColor
 
 data class MenuItem(
     val icon: Int? = null,
@@ -59,7 +59,6 @@ fun DelightTopBar(
             )
             DelightText(
                 text = descriptionText,
-                color = delightSubHeadingColor(),
                 modifier = Modifier
                     .wrapContentSize()
                     .padding(start = 14.dp)
@@ -72,6 +71,7 @@ fun DelightTopBar(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .padding(end = 14.dp),
+                    tint = MaterialTheme.colorScheme.secondary,
                     onClick = {
                         menuItem.onClick()
                     }

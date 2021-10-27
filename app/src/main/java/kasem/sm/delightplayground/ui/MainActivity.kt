@@ -41,7 +41,7 @@ import kasem.sm.delightplayground.features.rocket_detail.RocketDetailViewModel
 import kasem.sm.delightplayground.features.rocket_list.RocketListScreen
 import kasem.sm.delightplayground.features.rocket_list.RocketListViewModel
 import kasem.sm.delightplayground.ui.navigation.Screen
-import kasem.sm.delightplayground.ui.theme.DelightPlaygroundTheme
+import kasem.sm.delightplayground.ui.theme.AppTheme
 
 @ExperimentalAnimationApi
 @AndroidEntryPoint
@@ -54,7 +54,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            DelightPlaygroundTheme() {
+            AppTheme {
                 val navController = rememberNavController()
 
                 BoxWithConstraints {

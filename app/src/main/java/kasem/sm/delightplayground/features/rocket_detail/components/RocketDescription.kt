@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Description
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -43,7 +44,8 @@ fun RocketDescription(
                     .padding(start = 16.dp, top = 16.dp, bottom = 10.dp),
                 icon = Icons.Outlined.Description,
                 size = 18.dp,
-                addSpace = true
+                addSpace = true,
+                tint = MaterialTheme.colorScheme.onSecondary
             )
 
             DelightText(
@@ -52,7 +54,8 @@ fun RocketDescription(
                     .padding(top = 16.dp, bottom = 10.dp),
                 text = "Swipe up to read about ${rocket.rocketTitle}.",
                 font = regularFont(),
-                fontSize = 14.sp
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSecondary
             )
         }
 
@@ -64,7 +67,8 @@ fun RocketDescription(
                     vertical = 10.dp
                 ),
             text = rocket.description,
-            font = regularFont()
+            font = regularFont(),
+            color = MaterialTheme.colorScheme.onSecondary
         )
     }
 }

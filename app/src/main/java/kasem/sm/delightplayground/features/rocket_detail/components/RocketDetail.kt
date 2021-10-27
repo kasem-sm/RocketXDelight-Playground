@@ -30,6 +30,7 @@ import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Web
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -41,7 +42,6 @@ import kasem.sm.delightplayground.core.components.DelightTopBar
 import kasem.sm.delightplayground.core.components.Image
 import kasem.sm.delightplayground.core.components.MenuItem
 import kasem.sm.delightplayground.datasource.Rocket
-import kasem.sm.delightplayground.ui.theme.delightBackground
 
 @Composable
 fun RocketDetail(
@@ -53,13 +53,14 @@ fun RocketDetail(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(delightBackground())
+            .background(MaterialTheme.colorScheme.background)
     ) {
 
         if (isLoading) {
             CircularProgressIndicator(
                 modifier = Modifier
-                    .align(Alignment.Center)
+                    .align(Alignment.Center),
+                color = MaterialTheme.colorScheme.primary
             )
         }
 
@@ -97,7 +98,7 @@ fun RocketDetail(
                         width = 1.dp,
                         brush = Brush.verticalGradient(
                             colors = if (isSystemInDarkTheme()) {
-                                listOf(Color.Transparent, Color.Red.copy(alpha = 0.2f))
+                                listOf(Color.Transparent, MaterialTheme.colorScheme.inversePrimary)
                             } else {
                                 listOf(Color.Transparent, Color.Black.copy(alpha = 0.2f))
                             }

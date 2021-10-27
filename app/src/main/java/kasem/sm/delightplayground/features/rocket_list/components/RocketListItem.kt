@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.ripple.rememberRipple
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,7 +42,6 @@ import coil.annotation.ExperimentalCoilApi
 import kasem.sm.delightplayground.R
 import kasem.sm.delightplayground.core.components.Image
 import kasem.sm.delightplayground.datasource.Rocket
-import kasem.sm.delightplayground.ui.theme.delightBackground
 
 @OptIn(ExperimentalCoilApi::class)
 @Composable
@@ -72,7 +72,7 @@ fun RocketItem(
             width = 1.dp,
             brush = Brush.verticalGradient(
                 colors = if (isSystemInDarkTheme()) {
-                    listOf(Color.Transparent, Color.Red.copy(alpha = 0.2f))
+                    listOf(Color.Transparent, MaterialTheme.colorScheme.inversePrimary)
                 } else {
                     listOf(Color.Transparent, Color.Black.copy(alpha = 0.2f))
                 }
@@ -85,7 +85,7 @@ fun RocketItem(
     ) {
         Column(
             modifier = Modifier
-                .background(delightBackground())
+                .background(MaterialTheme.colorScheme.background)
         ) {
 
             /**
