@@ -5,6 +5,16 @@ usage of advance libraries such as Ktor, SqlDelight, Hilt etc with the recommend
 
 [![Delight-Playground](https://img.shields.io/badge/APK-Delight--Playground-green)](https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/app/release/app-release.apk)
 
+Supports Material You if you are using Android 12.
+
+<table>
+  <tr>
+    <th> <img src="https://user-images.githubusercontent.com/83884225/139141646-37bc0fa8-fa2c-4ce7-992d-548802634619.png" width="70%">
+    <th> <img src="https://user-images.githubusercontent.com/83884225/139141822-ca1b273a-9354-4770-8e91-90b710f5f293.png" width="70%">
+    <th> <img src="https://user-images.githubusercontent.com/83884225/139142117-fd696399-6aed-4c82-a91b-c4b8654cfb6e.png" width="70%">
+ </th>
+</table>
+
 <table>
   <tr>
     <th> <img src="https://github.com/kasem-sm/SpaceXDelight-Playground/blob/master/art/1.jpg" width="70%"> 
