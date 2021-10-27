@@ -1,59 +1,57 @@
-/*
- Copyright (c) 2021 Kasem S.M.
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
- */
-
 package kasem.sm.delightplayground.ui.theme
-
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
-@Composable
-fun delightBackground(): Brush {
-    return if (isSystemInDarkTheme()) {
-        Brush.verticalGradient(
-            colors = listOf(Color.Black, Color(0xFF01060A))
-        )
-    } else {
-        Brush.verticalGradient(
-            colors = listOf(Color.White, Color.White)
-        )
-    }
-}
+val md_theme_light_primary = Color(0xFF00687c)
+val md_theme_light_onPrimary = Color(0xFFffffff)
+val md_theme_light_primaryContainer = Color(0xFFaaedff)
+val md_theme_light_onPrimaryContainer = Color(0xFF001f27)
+val md_theme_light_secondary = Color(0xFF4b6269)
+val md_theme_light_onSecondary = Color(0xFFffffff)
+val md_theme_light_secondaryContainer = Color(0xFFcee7ef)
+val md_theme_light_onSecondaryContainer = Color(0xFF071e24)
+val md_theme_light_tertiary = Color(0xFF575d7e)
+val md_theme_light_onTertiary = Color(0xFFffffff)
+val md_theme_light_tertiaryContainer = Color(0xFFdde1ff)
+val md_theme_light_onTertiaryContainer = Color(0xFF131937)
+val md_theme_light_error = Color(0xFFba1b1b)
+val md_theme_light_errorContainer = Color(0xFFffdad4)
+val md_theme_light_onError = Color(0xFFffffff)
+val md_theme_light_onErrorContainer = Color(0xFF410001)
+val md_theme_light_background = Color(0xFFfafcfd)
+val md_theme_light_onBackground = Color(0xFF191c1d)
+val md_theme_light_surface = Color(0xFFfafcfd)
+val md_theme_light_onSurface = Color(0xFF191c1d)
+val md_theme_light_surfaceVariant = Color(0xFFdbe4e7)
+val md_theme_light_onSurfaceVariant = Color(0xFF3f484b)
+val md_theme_light_outline = Color(0xFF70797c)
+val md_theme_light_inverseOnSurface = Color(0xFFeff1f2)
+val md_theme_light_inverseSurface = Color(0xFF2e3132)
 
-@Composable
-fun delightTextColor(): Color {
-    return MaterialTheme.colors.onBackground
-}
+val md_theme_dark_primary = Color(0xFF56d6f5)
+val md_theme_dark_onPrimary = Color(0xFF003641)
+val md_theme_dark_primaryContainer = Color(0xFF004e5d)
+val md_theme_dark_onPrimaryContainer = Color(0xFFaaedff)
+val md_theme_dark_secondary = Color(0xFFb2cbd3)
+val md_theme_dark_onSecondary = Color(0xFF1d343a)
+val md_theme_dark_secondaryContainer = Color(0xFF334a51)
+val md_theme_dark_onSecondaryContainer = Color(0xFFcee7ef)
+val md_theme_dark_tertiary = Color(0xFFbfc4eb)
+val md_theme_dark_onTertiary = Color(0xFF282e4d)
+val md_theme_dark_tertiaryContainer = Color(0xFF3f4565)
+val md_theme_dark_onTertiaryContainer = Color(0xFFdde1ff)
+val md_theme_dark_error = Color(0xFFffb4a9)
+val md_theme_dark_errorContainer = Color(0xFF930006)
+val md_theme_dark_onError = Color(0xFF680003)
+val md_theme_dark_onErrorContainer = Color(0xFFffdad4)
+val md_theme_dark_background = Color(0xFF191c1d)
+val md_theme_dark_onBackground = Color(0xFFe1e3e4)
+val md_theme_dark_surface = Color(0xFF191c1d)
+val md_theme_dark_onSurface = Color(0xFFe1e3e4)
+val md_theme_dark_surfaceVariant = Color(0xFF3f484b)
+val md_theme_dark_onSurfaceVariant = Color(0xFFbfc8cb)
+val md_theme_dark_outline = Color(0xFF899295)
+val md_theme_dark_inverseOnSurface = Color(0xFF191c1d)
+val md_theme_dark_inverseSurface = Color(0xFFe1e3e4)
 
-@Composable
-fun delightSubHeadingColor(): Color {
-    return if (isSystemInDarkTheme()) {
-        Color(0xFFBE3320)
-    } else {
-        Color(0xFFDA1E04)
-    }
-}
-
-@Composable
-fun delightBottomSheetColor(): Color {
-    return if (isSystemInDarkTheme()) {
-        Color(0xFF161616)
-    } else {
-        Color(0xFFE0DEDE)
-    }
-}
+val seed = Color(0xFF017d93)
+val error = Color(0xFFba1b1b)

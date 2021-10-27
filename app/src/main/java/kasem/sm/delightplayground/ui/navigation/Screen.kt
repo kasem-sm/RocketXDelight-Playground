@@ -16,9 +16,9 @@
 
 package kasem.sm.delightplayground.ui.navigation
 
-import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavType
-import androidx.navigation.navArgument
+import androidx.navigation.compose.NamedNavArgument
+import androidx.navigation.compose.navArgument
 
 sealed class Screen(
     val route: String,

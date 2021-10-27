@@ -17,6 +17,7 @@
 package kasem.sm.delightplayground.features.rocket_detail
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -24,14 +25,16 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomSheetScaffold
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.rememberBottomSheetScaffoldState
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.ImageLoader
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kasem.sm.delightplayground.features.rocket_detail.components.RocketDescription
 import kasem.sm.delightplayground.features.rocket_detail.components.RocketDetail
-import kasem.sm.delightplayground.ui.theme.delightBottomSheetColor
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -44,6 +47,24 @@ fun RocketDetailScreen(
 
     val bottomSheetScaffoldState = rememberBottomSheetScaffoldState()
     val scope = rememberCoroutineScope()
+
+    val systemUiController = rememberSystemUiController()
+    val useDarkIcons = isSystemInDarkTheme()
+
+    val currentPrimaryColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.2f)
+    val currentBackgroundColor = MaterialTheme.colorScheme.inverseSurface
+
+    SideEffect {
+        systemUiController.run {
+            setSystemBarsColor(
+                color = currentPrimaryColor,
+                darkIcons = !useDarkIcons
+            )
+            setNavigationBarColor(
+                currentBackgroundColor
+            )
+        }
+    }
 
     BackHandler(
         enabled = bottomSheetScaffoldState.bottomSheetState.isExpanded ||
@@ -60,7 +81,7 @@ fun RocketDetailScreen(
                 .fillMaxSize(),
             scaffoldState = bottomSheetScaffoldState,
             sheetShape = RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp),
-            sheetBackgroundColor = delightBottomSheetColor(),
+            sheetBackgroundColor = MaterialTheme.colorScheme.inverseSurface,
             sheetContent = {
                 RocketDescription(rocket = rocket)
             }

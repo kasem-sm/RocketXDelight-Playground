@@ -25,14 +25,15 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
 import androidx.compose.material.ripple.rememberRipple
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kasem.sm.delightplayground.core.components.utils.draw
-import kasem.sm.delightplayground.ui.theme.delightTextColor
 
 @Composable
 fun DelightIcon(
@@ -41,6 +42,7 @@ fun DelightIcon(
     size: Dp = 25.dp,
     contentDescription: String? = null,
     addSpace: Boolean = false,
+    tint: Color = MaterialTheme.colorScheme.onPrimaryContainer,
     onClick: () -> Unit = {},
 ) {
     Row {
@@ -55,7 +57,7 @@ fun DelightIcon(
                     indication = rememberRipple(bounded = true),
                     onClick = onClick
                 ),
-            tint = delightTextColor().copy(alpha = 0.85f)
+            tint = tint
         )
         if (addSpace) {
             Spacer(modifier = Modifier.width(10.dp))
@@ -71,6 +73,7 @@ fun DelightIcon(
     contentDescription: String? = null,
     addSpace: Boolean = false,
     onClick: () -> Unit = {},
+    tint: Color = MaterialTheme.colorScheme.secondary
 ) {
     Icon(
         imageVector = icon,
@@ -83,7 +86,7 @@ fun DelightIcon(
                 indication = rememberRipple(bounded = true),
                 onClick = onClick
             ),
-        tint = delightTextColor().copy(alpha = 0.85f)
+        tint = tint
     )
     if (addSpace) {
         Spacer(modifier = Modifier.width(10.dp))

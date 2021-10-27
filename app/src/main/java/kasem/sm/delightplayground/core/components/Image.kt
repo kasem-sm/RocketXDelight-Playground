@@ -19,6 +19,7 @@ package kasem.sm.delightplayground.core.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -47,6 +48,7 @@ fun ImageLoader.Image(
                 CircularProgressIndicator(
                     modifier = Modifier
                         .align(Alignment.Center),
+                    color = MaterialTheme.colorScheme.primary,
                     strokeWidth = 2.dp
                 )
             }

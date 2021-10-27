@@ -63,7 +63,7 @@ fun RocketListItemDescription(
             fontSize = 12.sp,
             modifier = Modifier
                 .padding(1.dp)
-                .fillMaxWidth(0.8f)
+                .fillMaxWidth(0.8f),
         )
 
         isActive?.let {
